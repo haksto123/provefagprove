@@ -116,7 +116,7 @@ Dobbel sjekke og sørge for ingen problemer oppstår - 2 timer
 
 Eventuelt fortsette med ekstra funksjonalitet – 3 timer 
 
-Dag 9 (Fredag) 
+### Dag 9 (Fredag) 
 
 Presentere oppgaven – ca 1 – 2 timer 
 
