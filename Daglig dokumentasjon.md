@@ -44,6 +44,8 @@ Lagde ein scoreboard tab, der ein proc skytes av når man er på siste spørsmå
 Også lagde eg ein "developer" tab for quizzene der alle som har quiz developer rolla kan gå inn og redigere quizenne, spørsmål, og svar.
 
 Denne tabben skjules for folk uten denne rollen.
+<img width="751" height="1148" alt="image" src="https://github.com/user-attachments/assets/c57aad6d-fe9c-4237-b401-2091f4ba104c" />
+
 
 ---
 
