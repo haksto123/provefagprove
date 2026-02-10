@@ -26,10 +26,11 @@ Legge til ekstra funksjonalitet viss eg har ekstra tid til overs
  
 
 # Kilder/Eventuelle kilder: 
-Chatgpt, Vue docs, Sql server docs, Omega365 Docs,    Peter øren/Tobias nygård Sætre 
+[Chatgpt](https://chatgpt.com), [Vue docs](https://vuejs.org/guide/introduction), [Sql server docs](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver17), [w3schools](https://www.w3schools.com/), Omega365 Docs, kollegaer
+
 
 # Skisser: 
-Grov figma skisse | SQL server datamodell 
+[Grov figma skisse](https://www.figma.com/design/edqbUF7FXRdduB26YXVfhQ/Untitled?node-id=0-1&p=f&t=XRPVQYiqJc0Q6Zhf-0) | [SQL server datamodell](https://drawsql.app/teams/hocus/diagrams/quiz-app) 
 
 # programvare: 
 vue.js, bootstrap, SQL Server 
