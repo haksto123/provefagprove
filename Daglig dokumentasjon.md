@@ -51,6 +51,11 @@ Denne tabben skjules for folk uten denne rollen.
 
 ## 📅 2/10-2026
 
+  Fekk ein endring idag, skal legge til kategorier per quiz, også skal man greie å filtrere på kvar kategori.
+  Lagde ein ny tabell som heter atbl_HaakonStokkenes_QuizCategories der atbl_HaakonStokkenes_Quizes har ein foreign key mot categories tabellen.
+  Gjorde ferdig quizpage siden, tok vekk at eg har 2 knapper og heller når man klikker på submit så får du svar, også skifter knappen navn til next.
+  Begynnte på result skjermen.
+
 ---
 
 ## 📅 2/11-2026
