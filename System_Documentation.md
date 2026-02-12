@@ -1,5 +1,9 @@
 # System Documentation
 
+## Task
+
+- Develop a simple quiz app where users can answer multiple-choice questions, see their score at the end, and try again. Questions and metadata are stored on a server, with a documented integration layer between the client and the server.
+
 <details>
 <Summary> Technology </Summary>
 
