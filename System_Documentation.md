@@ -145,6 +145,7 @@ I made a new app called Quiz Categories setup and added it to the O365 setup app
 <summary> Missed functionality </summary>
 
 - instead of creating a seperate view for MyPermission I could have created a new capibility if a person is an admin (would be a cleaner check I think) but I didn't have time to change this as of writing.
+- Adding limit so a person can't make a quiz without having a question, answer, or cateogry (will fix this if I have time)
 </details>
 
 <details>
@@ -152,4 +153,5 @@ I made a new app called Quiz Categories setup and added it to the O365 setup app
   
 - Adding a timer where if you answer a question very fast you would get more points
 - Adding different answer types (multiple answers, text answers etc)
+- In the scoreboard I would have a filter so you can see the points for each quiz
 </details>
