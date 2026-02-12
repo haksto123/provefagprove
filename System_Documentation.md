@@ -59,6 +59,13 @@ The modules contain information about which applications the user can use and wh
 It is also specified whether the user has permission to edit data (AllowEdit) or delete data (AllowDelete). In addition, roles can include capabilities, which are more granular permissions that grant users specific types of access.
 Every role that is assigned must be linked to an OrgUnit.
 
+# 2FA
+In addition to this, two-factor authentication (2FA) is highly recommended. There are several available options, such as SMS, Email, Time-based One-Time Password (TOTP), and Passkeys. 
+SMS and Email are generally considered the least secure methods, but they are still better than having no 2FA at all.
+
+TOTP is based on one-time codes generated in authentication apps like Microsoft Authenticator and Google Authenticator after you have registered the service. 
+Passkeys are a passwordless alternative where your login is directly linked to a device you own, such as your phone, and is used to verify your identity.
+
 # OrgUnits
 The orgunits are built around a hierarchy where all orgunits will have a parent orgunit. These orgunits can be different types, for example Company, Contract, Project etc. 
 To get access to data a user needs to have role in an orgunit.
