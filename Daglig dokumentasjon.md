@@ -66,3 +66,4 @@ Denne tabben skjules for folk uten denne rollen.
 ---
 
 ## 📅 2/12-2026
+Skrevet system dokumentasjon, bruker veiledning, og testrapport/fikset små feil i appen
