@@ -5,7 +5,7 @@
 
 - Omega has built in security, so its easy to get started.
 - Also Omega has a lot of built in components which makes it a lot easier than rather having to make them myself
-- Omega's framework uses, vue.js, Bootstrap, and Microsoft SQL server, which are very good tools for creating apps, a good backend
+- Omega's framework uses, vue.js, Bootstrap, and Microsoft SQL server, which are very good tools for creating apps, and a good backend
 
 - I started using word for my documentation, but decided to switch to github since its easier to share, and people who get access can easily see new updates to my documentation
 
@@ -40,7 +40,7 @@
 
 | Procedure Name | Description | Pictures |
 |----------------|-------------|----------|
-| astp_HaakonStokkenes_SaveQuizAttempt | This proc executes at the end of a quiz so that the users attempt shows up in the scoreboard. The reason I have the set session context is becuase in my insert trigger I check on sviw_System_MyAccessTables and if that table has allowEdit = 1 the transaction continues. BUT a normal user shouldnt have the ability to insert new rows so the allowEdit for users is set to 0. So I set the session context only in the procedure so the insert trigger check skips. so normal users will be allowed to insert a new record for the scoreboard. | <img width="712" height="246" alt="image" src="https://github.com/user-attachments/assets/e4f819d0-7aa6-4635-8add-835ed1b02efa" />
+| astp_HaakonStokkenes_SaveQuizAttempt | This proc executes at the end of a quiz so that the users attempt shows up in the scoreboard. | <img width="704" height="250" alt="image" src="https://github.com/user-attachments/assets/9a87a796-109d-4a1f-bbb6-28027574f68b" />
 
   </details>
 
@@ -82,6 +82,8 @@ Then you can create an aviw that collects the data from the atbv so you can keep
 There should also be a custom security check in the triggers for extra security.
 
 - In my case I have created security checks in both the triggers and the atbv's. So anyone without the quiz user or the quiz admin roles will not have access to this app, and tables. Aswell as anyone without quiz admin will not be able to see the edit quiz tab, or insert into the tables.
+
+# Triggers
   
 </details>
 
@@ -90,5 +92,53 @@ There should also be a custom security check in the triggers for extra security.
 
 See the [User Manual](https://github.com/haksto123/provefagprove/blob/main/User_Manual.md) for a quick walkthrough.
 
+---------------------------------------------------------------------
+The total amount of apps I have created is 4. One for the quiz dashboard (main page). One for the quiz itself. One for the result screen, and one for the setup app for categories.
+Quiz Overview, scoreboard, and the ability to edit quizes are all in the same app (quiz dashboard).
+When you click "start quiz", you will be sent to the quiz page with a the corresponding Quiz_ID
+After youve clicked and answered a questionm you will get immidiate feedback on if it was wrong or right, or points will then increase or decrease depending on if it was right.
+Then you will be sent to the Results page after all questions have been answered, your quiz attempt will be saved and stored in the quiz scoreboard page of the dashboard.
+
+I have made all the frontend using vue (typescript) and styled with mostly custom CSS, but I also use bootstrap.
+
 </details> 
 
+<details>
+<summary> Twist </summary>
+  I got presented a twist throughout my development of the app, the twist was to add categories to each quiz, and be able to sort by categories.
+  I did this by making a new category table, and adding a new column in the quizes table called Category_ID that links to the category table, then I linked the category table and quiz table together in a view.
+  
+  In my app I made a selectedCategory variable, and a filteredquizes variable containing a filter that checks if the selectedCateogry is equal to quiz.data category.
+  Then instead of looping through the quiz data raw, I loop through the filteredQuizes variable.
+</details>
+
+<details>
+<summary> Challenges during development </summary>
+  
+### Permissions for quiz user   
+- Struggeled with figuring out how I could get a normal quiz user to insert into the quiz attempts table, they need to be able to do this since the procedure inserts a new row.
+- In my triggers I have check on sviw_System_MyAccessTables if AllowEdit = 1 (and AllowDelete = 1 on the delete triggers)
+
+#### Solution
+I thought the best solution would be to set the session context before the procedure fires to 1. Then in my trigger skip the security check if session_context was = 1
+Realized this was way less secure since skipping the trigger isnt the best security... So I switched the security by just setting allowEdit=1 on the quizattempts table for the Quiz_User module.
+
+### Adding a new category
+First I thought I could insert a new row in the dropdown of the categories in the edit quiz tab, this wasnt possible since the categories are joined in the view by using a category_ID and the category was owned by a different table
+#### Solution
+I made a new app called Quiz Categories setup and added it to the O365 setup app. Made a new menu group for quiz setup that is only avaliable for the quiz admin where you can insert edit and delete categories.
+  
+</details>
+
+<details> 
+
+<summary> Missed functionality </summary>
+- instead of creating a seperate view for MyPermission I could have created a new capibility if a person is an admin (would be a cleaner check I think) but I didn't have time to change this as of writing.
+</details>
+
+<details>
+<summary> extra functionality I didnt have time for </summary>
+  
+- Adding a timer where if you answer a question very fast you would get more points
+- Adding different answer types (multiple answers, text answers etc)
+</details>
