@@ -60,6 +60,9 @@ Denne tabben skjules for folk uten denne rollen.
 
 ## 📅 2/11-2026
 
+  Istedenfor å ha ein satt verdi på poeng så la eg til ScoreIncrease og ScoreDecrease i questions tabellen, også bruker eg heller dei verdiene i kalkulasjonen
+  Gjorde endringer på result skjermen, fikset UI, og la til mulighet for å åpne ein rapport som er et "quiz diploma"
+
 ---
 
 ## 📅 2/12-2026
