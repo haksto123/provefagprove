@@ -13,6 +13,7 @@
 </details>
 
 <details>
+  
   <summary>Architecture</summary>
 
 
@@ -84,7 +85,16 @@ There should also be a custom security check in the triggers for extra security.
 - In my case I have created security checks in both the triggers and the atbv's. So anyone without the quiz user or the quiz admin roles will not have access to this app, and tables. Aswell as anyone without quiz admin will not be able to see the edit quiz tab, or insert into the tables.
 
 # Triggers
-  
+
+- All my trigger have a check on sviw_System_MyAccessTables where it checks if AllowEdit = 1 (or AllowDelete = 1 for delete triggers)
+
+  <img width="641" height="122" alt="image" src="https://github.com/user-attachments/assets/ffe341c0-32da-43c4-874d-90dd41fbd7ce" />
+
+- In the quiz attempts insert trigger is the only place where I have an extra check which is 
+  <img width="620" height="135" alt="image" src="https://github.com/user-attachments/assets/2a032c38-4b3f-4f0f-8298-8207306f09fd" />
+
+- I have this as an extra check because a person shouldnt be able to insert into other peoples data.
+
 </details>
 
 <details>
@@ -133,6 +143,7 @@ I made a new app called Quiz Categories setup and added it to the O365 setup app
 <details> 
 
 <summary> Missed functionality </summary>
+
 - instead of creating a seperate view for MyPermission I could have created a new capibility if a person is an admin (would be a cleaner check I think) but I didn't have time to change this as of writing.
 </details>
 
